@@ -111,44 +111,6 @@ function formChanged() {
 
     let parameters = {budget_Limit, ensuite, contract_Length, locationOfAccom, size};
 
-    // elem = document.querySelector('input[name="degreeLevel"]:checked');
-    // console.log(elem);
-    // degreeLevel =  elem.value;
-    
-  
-    // elem = document.querySelector('input[name="budgetLimit"]:checked');
-    // console.log(elem);
-    // budgetLimit = elem.value;
-  
-    // elem = document.querySelector('input[name="ensuite"]:checked');
-    // console.log(elem);
-    // ensuite = elem.value;
-  
-    // elem = document.querySelector('input[name="contractLength"]:checked');
-    // console.log(elem);
-
-    // contractLength = elem.value;
-  
-    // elem = document.querySelector('input[name="location"]:checked');
-    // console.log(elem);
-
-    // locationOfAccom = elem.value;
-  
-    // elem = document.querySelector('input[name="size"]:checked');
-    // console.log(elem);
-
-    // sizeOfAccom= elem.value;
-  
-    // const userInput  = {
-    //     budgetLimit,
-    //     ensuite,
-    //     contractLength,
-    //     locationOfAccom,
-    //     sizeOfAccom
-    // }
-    // console.log(userInput);
-
-    // console.log(chosenParameters);
 
     const filterEmptyStringObj = obj => {
         let result = {};
@@ -228,7 +190,6 @@ function formChanged() {
           let filteredArray = undergraduateAccomArray.filter(handleFilter)
 
 
-          let pleaseTryAgain = "please try again"
           if (filteredArray.length == 0) {
             let x = document.getElementById("box-wrapper-hide");  
             x.innerHTML = `<br> <br>There are no accommodations with the chosen parameters, please try again.`; 
