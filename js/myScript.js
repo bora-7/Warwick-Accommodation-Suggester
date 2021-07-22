@@ -312,27 +312,112 @@ function formChanged() {
           }
 }
     if (degreeLevel == "postgraduate") {
-        console.log(postgraduateAccomArray);
+      console.log(postgraduateAccomArray);
+      
+      const handleFilter = obj => {
+        //ctr variabile counts how many properties matched
+          let ctr = 0;
+        
+          for (let key in obj) {
+            if (obj[key] === chosenObject[key]) {
+              //if the properity from the chosenObject matches the one in the obiect then the counter increments
+                ctr++;
+            }
+          }
+        // if the number of properties matched equals the number of properties the chosenObject has then the object is good and we return true In order to tell the filter function to return the object
+          if (ctr === Object.keys(chosenObject).length) {
+            return true;
+          }
+          //else it means that the number of properties matched is not equal to the number of properties in the chosenObject
+          return false;
+        };
+        
+        console.log(postgraduateAccomArray.filter(handleFilter));
+        let filteredArray = postgraduateAccomArray.filter(handleFilter)
 
-        const handleFilter = obj => {
-          //ctr variabile counts how many properties matched
-            let ctr = 0;
+
+        let pleaseTryAgain = "please try again"
+        if (filteredArray.length == 0) {
+          let x = document.getElementById("box-wrapper-hide");  
+          x.innerHTML = `<br> <br>There are no accommodations with the chosen parameters, please try again.`; 
+          x.style.fontSize = "1.8em";
+        } else {
+          let x = document.getElementById("box-wrapper-hide"); 
           
-            for (let key in obj) {
-              if (obj[key] === chosenObject[key]) {
-                //if the properity from the chosenObject matches the one in the obiect then the counter increments
-                  ctr++;
+          filteredArray.forEach(function (arrayItem) {
+            let accomDiv = document.createElement("DIV");
+            accomDiv.className = "accomClassName";
+            let ulNode = document.createElement("UL");
+            accomDiv.appendChild(ulNode);
+            x.appendChild(accomDiv);
+            
+            let usedKey;
+            for (key in arrayItem) {
+              
+
+              if (key == "accomName") {
+                usedKey = key;
+                key = "Accommodation";
+                
+
+                let node = document.createElement("LI"); 
+
+                let nodeTitle = document.createElement("H1"); 
+
+                let textnode = document.createTextNode(arrayItem[usedKey]);         // Create a text node
+
+                nodeTitle.appendChild(textnode);
+
+                node.appendChild(nodeTitle);
+
+                ulNode.appendChild(node);
+                continue;
+
               }
+              if (key == "contract_Length") {
+                usedKey = key;
+                key = "Length Of Contract (weeks)";
+              }
+
+              if (key == "budget_Limit") continue;
+
+              if (key == "actualRent") {
+                usedKey = key;
+                key = "Weekly Rent";
+              }
+
+              if (key == "locationOfAccom") {
+                usedKey = key;
+                key = "Location";
+              }
+
+              if (key == "ensuite") {
+                usedKey = key;
+                key = "Ensuite";
+              }
+
+              if (key == "size") continue;
+
+              if (key == "noOfRooms") {
+                usedKey = key;
+                key = "Total Number Of Rooms";
+              }
+              
+              let node = document.createElement("LI");                 // Create a <li> node
+              let eachText = `<span> ${key}: <span class="highlighted-text">${arrayItem[usedKey]}</span> </span>`;
+              //let textnode = document.createTextNode(eachText);
+              //textnode.innerHTML = "<span style='font-size:2rem;'" + eachText + "</span>";         // Create a text node
+              node.insertAdjacentHTML('afterbegin', eachText);
+              //node.appendChild(textnode);                              // Append the text to <li>
+              ulNode.appendChild(node);                                // Append <li> to <ul> with 
+              
+              
             }
-          // if the number of properties matched equals the number of properties the chosenObject has then the object is good and we return true In order to tell the filter function to return the object
-            if (ctr === Object.keys(chosenObject).length) {
-              return true;
-            }
-            //else it means that the number of properties matched is not equal to the number of properties in the chosenObject
-            return false;
-          };
+            
+        });
+
           
-          console.log(postgraduateAccomArray.filter(handleFilter));
+        }
     }
 
     function hideForm() {
