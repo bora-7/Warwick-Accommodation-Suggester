@@ -8,7 +8,7 @@
     font-family: 'Roboto Mono', monospace;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-  }
+    }
   
   /* GENERAL STUFF */
   input[type='radio'] { 
@@ -137,7 +137,12 @@
   .contentContainer {
     padding: 0;
     margin: 3em 5em;
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
   }
+
+
   
   .contentContainer p {
     font-size: 1.3em;
@@ -149,7 +154,8 @@
     display:flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: -30px 0 0 0;
+    margin: 0 0 0 0;
+    
 
   }
   
