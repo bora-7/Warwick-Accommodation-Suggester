@@ -91,6 +91,12 @@ const filterEmptyStringObj = (obj) => {
   return result;
 };
 
+const showChosenParameters = (chosenObjectText) => {
+  let x = document.getElementById("chosenParameters");
+  x.innerHTML = "Showing accommodations based on: <br> " + chosenObjectText;
+  x.style.fontSize = "1.6em";
+}
+
 function formChanged() {
 
   // first extract all the inputs that the user selected:
@@ -130,8 +136,6 @@ function formChanged() {
   //put all the extracted parameters in an object
   let parameters = { budget_Limit, ensuite, contract_Length, locationOfAccom, size };
 
-
-
   let chosenObject = filterEmptyStringObj(parameters); //remove empty parameters
 
   //while showing results, shows the user which parameters they chose
@@ -157,11 +161,7 @@ function formChanged() {
     chosenObjectText += "<span style='color:#D81B29'>" + key + "</span>" + ', ';
   }
 
-  const showChosenParameters = () => {
-    let x = document.getElementById("chosenParameters");
-    x.innerHTML = "Showing accommodations based on: <br> " + chosenObjectText;
-    x.style.fontSize = "1.6em";
-  }
+
 
   const filterAndShowAccom = (whichAccomArray) => {
     console.log(undergraduateAccomArray);
@@ -264,7 +264,7 @@ function formChanged() {
     filteredArray.forEach(handleForEach);
   }
 
-  showChosenParameters();
+  showChosenParameters(chosenObjectText);
   
   if (degreeLevel == "undergraduate") {
     filterAndShowAccom(undergraduateAccomArray)
