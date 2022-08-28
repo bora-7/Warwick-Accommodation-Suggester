@@ -102,7 +102,6 @@ const showChosenParameters = (chosenObjectText) => {
 
 //======================
 
-
 function formChanged() {
 
   // first extract all the inputs that the user selected:
@@ -165,8 +164,6 @@ function formChanged() {
     }
     chosenObjectText += "<span style='color:#D81B29'>" + key + "</span>" + ', ';
   }
-
-
 
   const filterAndShowAccom = (whichAccomArray) => {
     console.log(undergraduateAccomArray);
@@ -265,7 +262,6 @@ function formChanged() {
         ulNode.appendChild(node);                                // Append <li> to <ul> with 
       }
     }
-
     filteredArray.forEach(handleForEach);
   }
 
