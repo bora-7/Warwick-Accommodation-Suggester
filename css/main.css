@@ -365,7 +365,7 @@ header .logo {
 /* SUBMIT BUTTON (AFTER SUGGESTING) */
 .accomClassName {
   width: 22em;
-  height: 20em;
+  height: 24em;
   border: 4px solid var(--main-box-color);
 
   box-shadow: 13px 15px var(--main-box-color);

@@ -1,300 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-QCNBR3JC8V"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
 
-      gtag("config", "G-QCNBR3JC8V");
-    </script>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QCNBR3JC8V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-    <meta charset="UTF-8" />
-    <title>Warwick Accommodation Suggester</title>
-    <meta
-      name="description"
-      content="Find the accommodation that suits you best with the Accommodation Suggester!"
-    />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
-    <div class="headingContainer">
-      <header>
-        <div class="logo">Warwick Accommodation Suggester</div>
-        <div class="menuItems">
-          <a href="index.html" class="menuSuggester" style="color: black">
-            <b>SUGGESTER</b></a
-          >
-          <a href="halls.html" class="menuHalls" style="color: black">
-            <b>HALLS</b></a
-          >
+    gtag("config", "G-QCNBR3JC8V");
+  </script>
+
+  <meta charset="UTF-8" />
+  <title>Warwick Accommodation Suggester</title>
+  <meta name="description" content="Find the accommodation that suits you best with the Accommodation Suggester!" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@300;400&display=swap"
+    rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <div class="headingContainer">
+    <header>
+      <div class="logo">Warwick Accommodation Suggester</div>
+      <div class="menuItems">
+        <a href="index.html" class="menuSuggester" style="color: black">
+          <b>SUGGESTER</b></a>
+        <a href="halls.html" class="menuHalls" style="color: black">
+          <b>HALLS</b></a>
+      </div>
+    </header>
+  </div>
+
+  <div class="contentContainer">
+    <p id="chosenParameters">
+      Select the factors that matter to you, and we'll suggest some <br />
+      halls of residence you might want to consider.
+    </p>
+
+    <form action="">
+      <div class="box-wrapper" id="box-wrapper-hide">
+        <div class="degreeLevel">
+          <ul>
+            <li>
+              <h2>Degree Level *</h2>
+            </li>
+
+            <li>
+              <input class="input-degreeLevel" type="radio" name="degreeLevel" value="undergraduate" required />
+              <label for="degreeLevel"> Undergraduate</label><br />
+            </li>
+            <li>
+              <input class="input-degreeLevel" type="radio" name="degreeLevel" value="postgraduate" />
+              <label for="degreeLevel"> Postgraduate</label><br />
+            </li>
+          </ul>
         </div>
-      </header>
-    </div>
 
-    <div class="contentContainer">
-      <p id="chosenParameters">
-        Select the factors that matter to you, and we'll suggest some <br />
-        halls of residence you might want to consider.
-      </p>
+        <div class="budgetLimit">
+          <ul>
+            <li>
+              <h2>Budget Limit</h2>
+            </li>
 
-      <form action="">
-        <div class="box-wrapper" id="box-wrapper-hide">
-          <div class="degreeLevel">
-            <ul>
-              <li><h2>Degree Level *</h2></li>
+            <li>
+              <input class="input-budgetLimit" type="radio" name="budgetLimit" value="mid" />
+              <label for="budgetLimit"> Around £150 per week</label><br />
+            </li>
+            <li>
+              <input class="input-budgetLimit" type="radio" name="budgetLimit" value="low" />
+              <label for="budgetLimit"> Around £100 per week</label><br />
+            </li>
 
-              <li>
-                <input
-                  class="input-degreeLevel"
-                  type="radio"
-                  name="degreeLevel"
-                  value="undergraduate"
-                  required
-                />
-                <label for="degreeLevel"> Undergraduate</label><br />
-              </li>
-              <li>
-                <input
-                  class="input-degreeLevel"
-                  type="radio"
-                  name="degreeLevel"
-                  value="postgraduate"
-                />
-                <label for="degreeLevel"> Postgraduate</label><br />
-              </li>
-            </ul>
-          </div>
-
-          <div class="budgetLimit">
-            <ul>
-              <li><h2>Budget Limit</h2></li>
-
-              <li>
-                <input
-                  class="input-budgetLimit"
-                  type="radio"
-                  name="budgetLimit"
-                  value="mid"
-                />
-                <label for="budgetLimit"> Around £150 per week</label><br />
-              </li>
-              <li>
-                <input
-                  class="input-budgetLimit"
-                  type="radio"
-                  name="budgetLimit"
-                  value="low"
-                />
-                <label for="budgetLimit"> Around £100 per week</label><br />
-              </li>
-
-              <li>
-                <p>*Don't choose anything if you don't have a budget limit</p>
-              </li>
-            </ul>
-          </div>
-
-          <div class="ensuite">
-            <ul>
-              <li><h2>Ensuite</h2></li>
-
-              <li>
-                <input
-                  class="input-ensuite"
-                  type="radio"
-                  name="ensuite"
-                  value="yes"
-                />
-                <label for="ensuite"> Yes</label><br />
-              </li>
-              <li>
-                <input
-                  class="input-ensuite"
-                  type="radio"
-                  name="ensuite"
-                  value="no"
-                />
-                <label for="ensuite"> No</label><br />
-              </li>
-            </ul>
-          </div>
-
-          <div class="contractLength">
-            <ul>
-              <li>
-                <h2>
-                  Contract Length
-                  <a
-                    href="https://imgur.com/a/CCcb1ba"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >ⓘ</a
-                  >
-                </h2>
-              </li>
-
-              <li>
-                <input
-                  class="checkBoxRound"
-                  type="radio"
-                  name="contractLength"
-                  value="35 weeks"
-                />
-                <label for="contractLength"> 35 Weeks (undergrad only)</label
-                ><br />
-              </li>
-              <li>
-                <input
-                  class="checkBoxRound"
-                  type="radio"
-                  name="contractLength"
-                  value="40 weeks"
-                />
-                <label for="contractLength"> 40 Weeks</label><br />
-              </li>
-              <li>
-                <input
-                  class="checkBoxRound"
-                  type="radio"
-                  name="contractLength"
-                  value="44 weeks"
-                />
-                <label for="contractLength"> 44 Weeks</label><br />
-              </li>
-              <li>
-                <input
-                  class="checkBoxRound"
-                  type="radio"
-                  name="contractLength"
-                  value="50 weeks"
-                />
-                <label for="contractLength"> 50 Weeks (postgrad only)</label
-                ><br />
-              </li>
-            </ul>
-          </div>
-
-          <div class="location">
-            <ul>
-              <li>
-                <h2>
-                  Location
-                  <a
-                    href="https://warwick.ac.uk/about/visiting/maps/campusmap/campus_map_september_20204.pdf#page=2"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >ⓘ</a
-                  >
-                </h2>
-              </li>
-
-              <li>
-                <input
-                  class="checkBoxRound"
-                  type="radio"
-                  name="location"
-                  value="central"
-                />
-                <label for="location"> Central Campus</label><br />
-              </li>
-              <li>
-                <input
-                  class="checkBoxRound"
-                  type="radio"
-                  name="location"
-                  value="cryfield"
-                />
-                <label for="location"> Cryfield Village</label><br />
-              </li>
-              <li>
-                <input
-                  class="checkBoxRound"
-                  type="radio"
-                  name="location"
-                  value="lakeside"
-                />
-                <label for="location"> Lakeside Village</label><br />
-              </li>
-              <li>
-                <input
-                  class="checkBoxRound"
-                  type="radio"
-                  name="location"
-                  value="westwood"
-                />
-                <label for="location"> Westwood</label><br />
-              </li>
-            </ul>
-          </div>
-
-          <div class="size">
-            <ul>
-              <li><h2>Size of Accom</h2></li>
-
-              <li>
-                <input
-                  class="checkBoxRound"
-                  type="radio"
-                  name="size"
-                  value="big"
-                />
-                <label for="location"> Big (500> rooms)</label><br />
-              </li>
-              <li>
-                <input
-                  class="checkBoxRound"
-                  type="radio"
-                  name="size"
-                  value="small"
-                />
-                <label for="location"> Small (500< rooms)</label><br />
-              </li>
-            </ul>
-          </div>
-          <input
-            type="submit"
-            value="SUGGEST"
-            class="submitButton"
-            onclick="formChanged(); return false;"
-          />
+            <li>
+              <p>*Don't choose anything if you don't have a budget limit</p>
+            </li>
+          </ul>
         </div>
-      </form>
-    </div>
 
-    <script src="js/myScript.js" defer></script>
+        <div class="ensuite">
+          <ul>
+            <li>
+              <h2>Ensuite</h2>
+            </li>
 
-    <div class="footerContainer">
-      <footer>
-        <ul>
-          <li>©2021 Warwick Accom Suggester</li>
-          <li>
-            <a
-              href="https://github.com/bora-7"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><img
-                src="img/githubwhite.png"
-                alt="github symbol"
-                class="github"
-            /></a>
-          </li>
-        </ul>
-      </footer>
-    </div>
-  </body>
+            <li>
+              <input class="input-ensuite" type="radio" name="ensuite" value="yes" />
+              <label for="ensuite"> Yes</label><br />
+            </li>
+            <li>
+              <input class="input-ensuite" type="radio" name="ensuite" value="no" />
+              <label for="ensuite"> No</label><br />
+            </li>
+          </ul>
+        </div>
+
+        <div class="contractLength">
+          <ul>
+            <li>
+              <h2>
+                Contract Length
+                <a href="https://imgur.com/a/CCcb1ba" target="_blank" rel="noopener noreferrer">ⓘ</a>
+              </h2>
+            </li>
+
+            <li>
+              <input class="checkBoxRound" type="radio" name="contractLength" value="35 weeks" />
+              <label for="contractLength"> 35 Weeks (undergrad only)</label><br />
+            </li>
+            <li>
+              <input class="checkBoxRound" type="radio" name="contractLength" value="40 weeks" />
+              <label for="contractLength"> 40 Weeks</label><br />
+            </li>
+            <li>
+              <input class="checkBoxRound" type="radio" name="contractLength" value="44 weeks" />
+              <label for="contractLength"> 44 Weeks</label><br />
+            </li>
+            <li>
+              <input class="checkBoxRound" type="radio" name="contractLength" value="50 weeks" />
+              <label for="contractLength"> 50 Weeks (postgrad only)</label><br />
+            </li>
+          </ul>
+        </div>
+
+        <div class="location">
+          <ul>
+            <li>
+              <h2>
+                Location
+                <a href="https://warwick.ac.uk/about/visiting/maps/campusmap/campus_map_september_20204.pdf#page=2"
+                  target="_blank" rel="noopener noreferrer">ⓘ</a>
+              </h2>
+            </li>
+
+            <li>
+              <input class="checkBoxRound" type="radio" name="location" value="central" />
+              <label for="location"> Central Campus</label><br />
+            </li>
+            <li>
+              <input class="checkBoxRound" type="radio" name="location" value="cryfield" />
+              <label for="location"> Cryfield Village</label><br />
+            </li>
+            <li>
+              <input class="checkBoxRound" type="radio" name="location" value="lakeside" />
+              <label for="location"> Lakeside Village</label><br />
+            </li>
+            <li>
+              <input class="checkBoxRound" type="radio" name="location" value="westwood" />
+              <label for="location"> Westwood</label><br />
+            </li>
+          </ul>
+        </div>
+
+        <div class="size">
+          <ul>
+            <li>
+              <h2>Size of Accom</h2>
+            </li>
+
+            <li>
+              <input class="checkBoxRound" type="radio" name="size" value="big" />
+              <label for="location"> Big (500> rooms)</label><br />
+            </li>
+            <li>
+              <input class="checkBoxRound" type="radio" name="size" value="small" />
+              <label for="location"> Small (500< rooms)</label><br />
+            </li>
+          </ul>
+        </div>
+        <input type="submit" value="SUGGEST" class="submitButton" onclick="formChanged(); return false;" />
+      </div>
+    </form>
+  </div>
+
+  <script src="js/myScript.js" defer></script>
+
+  <div class="footerContainer">
+    <footer>
+      <ul>
+        <li>©2021 Warwick Accom Suggester</li>
+        <li>
+          <a href="https://github.com/bora-7" target="_blank" rel="noopener noreferrer"><img src="img/githubwhite.png"
+              alt="github symbol" class="github" /></a>
+        </li>
+      </ul>
+    </footer>
+  </div>
+</body>
+
 </html>
