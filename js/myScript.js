@@ -80,6 +80,17 @@ const hideForm = () => {
   x.innerHTML = ""
 }
 
+//remove empty strings from object
+const filterEmptyStringObj = (obj) => {
+  let result = {};
+  for (let key in obj) {
+    if (obj[key] !== '') {
+      result[key] = obj[key];
+    }
+  }
+  return result;
+};
+
 function formChanged() {
 
   // first extract all the inputs that the user selected:
@@ -119,15 +130,7 @@ function formChanged() {
   //put all the extracted parameters in an object
   let parameters = { budget_Limit, ensuite, contract_Length, locationOfAccom, size };
 
-  const filterEmptyStringObj = (obj) => {
-    let result = {};
-    for (let key in obj) {
-      if (obj[key] !== '') {
-        result[key] = obj[key];
-      }
-    }
-    return result;
-  };
+
 
   let chosenObject = filterEmptyStringObj(parameters); //remove empty parameters
 
