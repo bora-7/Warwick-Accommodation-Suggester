@@ -1,5 +1,5 @@
 # Warwick Accommodation Suggester
-### [You can visit the website here](https://www.accomsuggester.co.uk/)
+### [You can visit the website here](https://accomsuggester.netlify.app/)
 ![main page](img/screenshot.png)
 
 ## Description
