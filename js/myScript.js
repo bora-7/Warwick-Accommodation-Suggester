@@ -67,6 +67,8 @@ let postgraduateAccomArray = [
   Whitefields_Post
 ];
 
+//========HELPER FUNCTIONS========
+
 //uncheck all form elements
 const uncheckAll = (document_name) => {
   var ele = document.getElementsByName(document_name);
@@ -91,11 +93,15 @@ const filterEmptyStringObj = (obj) => {
   return result;
 };
 
+//show the parameters that the user chose
 const showChosenParameters = (chosenObjectText) => {
   let x = document.getElementById("chosenParameters");
   x.innerHTML = "Showing accommodations based on: <br> " + chosenObjectText;
   x.style.fontSize = "1.6em";
 }
+
+//======================
+
 
 function formChanged() {
 
@@ -128,7 +134,6 @@ function formChanged() {
     uncheckAll("size");
     return;
   }
-
 
   hideForm();
   window.scrollTo(0, 0);
